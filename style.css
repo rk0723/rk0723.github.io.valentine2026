@@ -1,0 +1,342 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Segoe UI,sans-serif;
+  background: linear-gradient(135deg, #330033, #993366); 
+  /* ungu gelap / magenta gelap */
+  color:white;
+  overflow:hidden;
+}
+
+.slide{
+  display:none;
+  height:100vh;
+  padding:40px 20px;
+  text-align:center;
+}
+.slide.active{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ============ SLIDE 1 ============ */
+.btn-group{display:flex;gap:20px;margin-top:30px}
+button{
+  padding:14px 28px;
+  border-radius:30px;
+  border:none;
+  font-size:18px;
+}
+#yesBtn{background:#ff4d6d;color:white}
+#noBtn{background:#ccc}
+
+.slide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ============ SLIDE 2 ============ */
+.photos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:24px 0;
+}
+
+.photos img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:16px;
+  cursor:pointer;
+  transition:transform .4s ease,box-shadow .4s;
+}
+
+/* 🔥 ZOOM LEBIH BESAR */
+.photos img.active{
+  transform:scale(1.45);
+  box-shadow:0 15px 40px rgba(255,100,150,.6);
+  z-index:5;
+}
+
+#photoMessage{
+  min-height:44px;
+  margin-top:18px;
+}
+
+.surprise{
+  margin-top:20px;
+  background:#ff758f;
+  color:white;
+}
+
+/* ============ ANIMASI ============ */
+@keyframes bloom{
+  0%{transform:translateX(-50%) scale(0)}
+  80%{transform:translateX(-50%) scale(1.1)}
+  100%{transform:translateX(-50%) scale(1)}
+}
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ffe6e6;
+}
+
+.opening-screen {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.opening-screen h1 {
+  font-size: 2.5em;
+  z-index: auto;
+  position: relative;
+  color: #ff4d4d;
+  margin-bottom: 20px;
+}
+
+.opening-screen input {
+  padding: 10px;
+  font-size: 1.2em;
+  border: 2px solid #ff4d4d;
+  border-radius: 10px;
+  outline: none;
+  width: 80%;
+  max-width: 300px;
+  z-index: auto;
+  position: relative;
+}
+
+.opening-screen button {
+  z-index: auto;
+  position: relative;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.opening-screen button:hover {
+  background-color: #e60000;
+  transform: scale(1.1);
+}
+
+.love-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  overflow: hidden;
+}
+
+.love-effect span {
+  position: fixed;
+  display: block;
+  font-size: 2em;
+  animation: animate 5s linear infinite;
+  bottom: -100px;
+}
+
+@keyframes animate {
+  0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+  }
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.animated-text {
+  font-size: 2.5em;
+  color: #ff4d4d;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background-color: #ff4d4d;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 50px auto;
+  animation: heartbeat 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background-color: #ff4d4d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50px;
+}
+
+@keyframes heartbeat {
+  0% {
+      transform: scale(1) rotate(-45deg);
+  }
+  50% {
+      transform: scale(1.1) rotate(-45deg);
+  }
+  100% {
+      transform: scale(1) rotate(-45deg);
+  }
+}
+
+.message {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 20px;
+  animation: slideIn 2s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+#nextPageButton {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#nextPageButton:hover {
+  background-color: #e60000;
+  transform: scale(1.1);
+}
+
+/* Button shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* SLIDE 1 */
+#slide1 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* FOTO JATUH */
+.falling-photos {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* di belakang */
+  pointer-events: none;
+}
+
+.falling-photos img {
+  position: absolute;
+  top: -120px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%; /* ⬅️ JADI BULAT */
+  opacity: 0.9;
+  animation: fall linear infinite;
+  animation-delay: -2s;
+}
+
+/* variasi */
+.falling-photos img:nth-child(1) { left: 10%; animation-duration: 3s; }
+.falling-photos img:nth-child(2) { left: 30%; animation-duration: 4s; }
+.falling-photos img:nth-child(3) { left: 50%; animation-duration: 3.5s; }
+.falling-photos img:nth-child(4) { left: 70%; animation-duration: 4.5s; }
+.falling-photos img:nth-child(5) { left: 85%; animation-duration: 3.8s; }
+
+@keyframes fall {
+  from {
+    transform: translateY(-150px) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* teks & tombol di depan */
+#slide1 h1,
+#slide1 .btn-group {
+  position: relative;
+  z-index: 2;
+}
+
+#typingText {
+  white-space: pre-wrap; /* ⬅️ biar \n muncul sebagai baris baru */
+  word-wrap: break-word; /* optional, agar kata panjang otomatis break */
+  font-size: 24px;            /* ukuran font */
+  line-height: 1.2;           /* jarak antar baris, bisa pakai angka atau px */
+  text-align: center;         /* optional, biar teks rata tengah */
+  margin: 20px 0;             /* optional, jarak vertikal dari elemen lain */
+  font-family: 'Great Vibes', 'Pacifico', cursive; /* font romantis */
+  color: #ffb6c1;
+
+}

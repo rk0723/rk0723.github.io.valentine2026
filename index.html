@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine!!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<section id="slide1" class="slide active">
+  
+  <div class="falling-photos">
+    <img src="Screenshot_2026-01-31-22-33-32-937_com.ss.android.ugc.trill.jpg">
+    <img src="Screenshot_2026-01-31-22-33-32-937_com.ss.android.ugc.trill.jpg">
+    <img src="Screenshot_2026-01-31-22-33-32-937_com.ss.android.ugc.trill.jpg">
+    <img src="Screenshot_2026-01-31-22-33-32-937_com.ss.android.ugc.trill.jpg">
+    <img src="Screenshot_2026-01-31-22-33-32-937_com.ss.android.ugc.trill.jpg">
+    <img src="Screenshot_2026-01-31-22-33-32-937_com.ss.android.ugc.trill.jpg">
+  </div>
+  
+  <h1>Will you be my Valentine? 💝</h1>
+  <div class="btn-group">
+    <button id="yesBtn" onclick="goToSlide(2)">YES 💕</button>
+    <button id="noBtn">NO 😢</button>
+  </div>
+
+</section>
+
+<!-- SLIDE 2 -->
+<section id="slide2" class="slide">
+  <h1 id="typingText"></h1>
+
+  <div class="photos">
+    <img src="IMG_20260107_204207.jpg" onclick="selectPhoto(this,'You are my favorite person ❤️')">
+    <img src="IMG_20251203_180000.jpg" onclick="selectPhoto(this,'Every moment with you is precious 💖')">
+    <img src="IMG_20250216_180555.jpg" onclick="selectPhoto(this,'You make me smile every day 😊')">
+    <img src="IMG_20250215_192308.jpg" onclick="selectPhoto(this,'My heart is always with you 💞')">
+    <img src="IMG_20250209_115104.jpg" onclick="selectPhoto(this,'You are my sunshine ☀️')">
+    <img src="IMG_20260204_101338.jpg" onclick="selectPhoto(this,'I love you more sayanggkuu, akuu sayangg kamuu 💕')">
+  </div>
+
+  <p id="photoMessage"></p>
+   <button id="nextPageButton">Surprise 💖</button>
+
+</section>
+<audio id="musicSlide2" loop>
+  <source src="ssstik.io_1770129050362.mp3" type="audio/mp3">
+</audio>
+
+<!-- 🎶 MUSIK SURPRISE -->
+<audio id="musicSurprise" loop>
+  <source src="ssstik.io_1770057186791" type="audio/mp3">
+</audio>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
